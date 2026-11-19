@@ -1,0 +1,39 @@
+{
+  "name": "spms-platform",
+  "version": "4.0.0",
+  "description": "Student Placement Management System (SPMS) - Enterprise Campus Recruitment Platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "node start-all.js",
+    "build": "cd client && npm run build",
+    "seed": "node server/src/database/seed.js",
+    "admin:set-creds": "node server/src/utils/setAdminCredentials.js",
+    "db:postgres:setup": "node server/src/database/migrate-to-postgres.js",
+    "db:postgres:test": "node server/src/database/test-postgres.js",
+    "test": "node server/src/database/seed.js"
+  },
+  "keywords": [
+    "campus-recruitment",
+    "placement-management",
+    "iit-madras",
+    "clean-architecture",
+    "rbac",
+    "postgresql",
+    "react"
+  ],
+  "author": "Logesh Velu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.9",
+    "express": "^5.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.23.1"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
